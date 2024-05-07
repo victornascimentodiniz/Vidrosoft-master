@@ -14,7 +14,7 @@ class TelaCadastroPessoa(QMainWindow):
         navbar_layout = QHBoxLayout()
 
         # Botões da barra de navegação
-        botao_home = QPushButton("Home")
+        botao_home = QPushButton("Home",clicked=self.voltar_home)
         botao_estoque = QPushButton("Estoque")
         botao_pedido = QPushButton("Pedido")
         botao_fornecedor = QPushButton("Fornecedor")

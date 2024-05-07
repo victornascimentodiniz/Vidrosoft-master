@@ -15,7 +15,7 @@ class TelaCalendario(QMainWindow):
         self.navbar_layout = QHBoxLayout()
 
         # Botões da barra de navegação
-        botao_home = QPushButton("Home")
+        botao_home = QPushButton("Home",clicked=self.voltar_home)
         botao_cadastro_pessoa = QPushButton("Cadastro de Pessoa")
         botao_calculadora = QPushButton("Calculadora")
         botao_estoque = QPushButton("Estoque")
@@ -82,3 +82,7 @@ class TelaCalendario(QMainWindow):
         cor = QColor(255, 165, 0)  # Cor laranja
         format.setForeground(cor)
         self.calendario.setDateTextFormat(date, format)
+    def voltar_home(self):
+        self.hide()
+        self.tela_home = TelaHome()
+        self.tela_home.show()

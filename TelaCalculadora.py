@@ -9,7 +9,7 @@ class TelaCalculadora(QMainWindow):
 
         # Barra de navegação
         navbar_layout = QHBoxLayout()
-        botao_home = QPushButton("Home")
+        botao_home = QPushButton("Home", clicked=self.voltar_home)
         botao_cadastro_pessoa = QPushButton("Cadastro de Pessoa")
         botao_calendario = QPushButton("Calendário")
         botao_estoque = QPushButton("Estoque")  # Novo botão
@@ -102,6 +102,10 @@ class TelaCalculadora(QMainWindow):
         button = self.sender()
         text = button.text()
         self.display.setText(self.display.text() + text)
+    def voltar_home(self):
+        self.hide()
+        self.tela_home = TelaHome()
+        self.tela_home.show()
 
 if __name__ == "__main__":
     import sys
